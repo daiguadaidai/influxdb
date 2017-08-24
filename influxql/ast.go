@@ -4379,6 +4379,9 @@ func Walk(v Visitor, node Node) {
 		Walk(v, n.Sources)
 		Walk(v, n.Condition)
 
+	case *ExplainStatement:
+		Walk(v, n.Statement)
+
 	case *Field:
 		Walk(v, n.Expr)
 
